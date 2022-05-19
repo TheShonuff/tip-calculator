@@ -1,0 +1,117 @@
+.Calculator {
+  width: 920px;
+  height: 481px;
+  border-radius: 25px;
+  background-color: #ffffff;
+  box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+}
+
+h4,
+h5,
+p {
+  font-family: "Space Mono", monospace;
+}
+.Controller-Container {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.Controller-Container h5,
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #5e7a7d;
+  margin-bottom: 1rem;
+}
+
+#bill,
+#NumPeople {
+  border: none;
+  background-color: #f3f9fa;
+  width: 379px;
+  height: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00474b;
+  text-align: right;
+}
+
+.Tip-Selector {
+  width: 400px;
+  height: 152px;
+}
+button {
+  width: 117px;
+  height: 48px;
+  background-color: #00474b;
+  color: #fff;
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: #26c2ae;
+  color: #00474b;
+}
+
+.result {
+  width: 413px;
+  height: 417px;
+  background-color: #00474b;
+  border-radius: 15px;
+  margin-left: 2.5rem;
+}
+
+.TipAmount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+.TipAmount p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.TipAmount h3 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #26c2ae;
+}
+
+.person {
+  font-size: 13;
+  font-weight: bold;
+  color: #7f9d9f;
+}
+
+.PersonAmount p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.PersonAmount h3 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #26c2ae;
+}
+
+.PersonAmount {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 1rem;
+  margin-top: 0;
+}
