@@ -6,9 +6,10 @@ import IconPeron from "./assests/images/icon-person.svg";
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { amount: "", numPeople: 0 };
+    this.state = { amount: "", numPeople: 0, tipPercent: 0 };
     this.handleAmountChange = this.handleAmountChange.bind(this);
     this.handlePeopleChange = this.handlePeopleChange.bind(this);
+    this.handleTipPercent = this.handleTipPercent.bind(this);
   }
 
   handleAmountChange(event) {
@@ -17,8 +18,14 @@ class Calculator extends React.Component {
   handlePeopleChange(event) {
     this.setState({ numPeople: event.target.value });
   }
+  handleTipPercent(event) {
+    this.setState({ tipPercent: event.target.value });
+    console.log(`The current tip percent is set to ${this.state.tipPercent}`);
+    console.log(event.target.value);
+  }
   render() {
     console.log(this.state.amount);
+
     return (
       <div className="Calculator">
         <div className="Controller-Container">
@@ -34,11 +41,36 @@ class Calculator extends React.Component {
             ></input>
             <h5>Select Tip %</h5>
             <div className="Tip-Selector">
-              <button>5%</button>
-              <button>10%</button>
-              <button>15%</button>
-              <button>25%</button>
-              <button>50%</button>
+              <button
+                onClick={(event) => this.handleTipPercent(event, "value")}
+                value=".05"
+              >
+                5%
+              </button>
+              <button
+                onClick={(event) => this.handleTipPercent(event, "value")}
+                value=".10"
+              >
+                10%
+              </button>
+              <button
+                onClick={(event) => this.handleTipPercent(event, "value")}
+                value=".15"
+              >
+                15%
+              </button>
+              <button
+                onClick={(event) => this.handleTipPercent(event, "value")}
+                value=".25"
+              >
+                25%
+              </button>
+              <button
+                onClick={(event) => this.handleTipPercent(event, "value")}
+                value=".50"
+              >
+                50%
+              </button>
               <button>Custom</button>
             </div>
             <h5>Number of People</h5>
@@ -59,7 +91,10 @@ class Calculator extends React.Component {
                   <br />
                   <span className="person">/ person</span>
                 </p>
-                <h3>$4.32</h3>
+                <h3>
+                  {(this.state.amount * this.state.tipPercent) /
+                    this.state.numPeople}
+                </h3>
               </div>
               <div className="PersonAmount">
                 <p>
