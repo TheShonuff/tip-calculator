@@ -55,6 +55,11 @@ button {
   margin-bottom: 1rem;
 }
 
+.Active {
+  background-color: #26c2ae;
+  color: #00474b;
+}
+
 button:hover {
   background-color: #26c2ae;
   color: #00474b;
@@ -114,4 +119,13 @@ button:hover {
   margin-left: 2rem;
   margin-right: 1rem;
   margin-top: 0;
+}
+
+.Reset {
+  margin-top: 8rem;
+  margin-left: 2.5rem;
+  width: 333px;
+  height: 48px;
+  background-color: #26c2ae;
+  color: #00474b;
 }

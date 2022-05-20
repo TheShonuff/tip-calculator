@@ -6,10 +6,14 @@ import IconPeron from "./assests/images/icon-person.svg";
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { amount: "", numPeople: 0, tipPercent: 0 };
+    this.state = { amount: "", numPeople: 1, tipPercent: 0 };
     this.handleAmountChange = this.handleAmountChange.bind(this);
     this.handlePeopleChange = this.handlePeopleChange.bind(this);
     this.handleTipPercent = this.handleTipPercent.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+  handleReset(event) {
+    this.setState({ amount: "", tipPercent: 0 });
   }
 
   handleAmountChange(event) {
@@ -22,6 +26,17 @@ class Calculator extends React.Component {
     this.setState({ tipPercent: event.target.value });
     console.log(`The current tip percent is set to ${this.state.tipPercent}`);
     console.log(event.target.value);
+  }
+  calculateTipAmount() {
+    const result =
+      (this.state.amount * this.state.tipPercent) / this.state.numPeople;
+    return result.toFixed(2);
+  }
+  calculateTotalAmount() {
+    const tipAmount = this.calculateTipAmount();
+    const subtotal = this.state.amount / this.state.numPeople;
+    const total = parseFloat(tipAmount, 10) + parseFloat(subtotal, 10);
+    return total.toFixed(2);
   }
   render() {
     console.log(this.state.amount);
@@ -42,32 +57,37 @@ class Calculator extends React.Component {
             <h5>Select Tip %</h5>
             <div className="Tip-Selector">
               <button
+                className={this.state.tipPercent === "0.05" ? "Active" : ""}
                 onClick={(event) => this.handleTipPercent(event, "value")}
-                value=".05"
+                value="0.05"
               >
                 5%
               </button>
               <button
+                className={this.state.tipPercent === "0.10" ? "Active" : ""}
                 onClick={(event) => this.handleTipPercent(event, "value")}
-                value=".10"
+                value="0.10"
               >
                 10%
               </button>
               <button
+                className={this.state.tipPercent === "0.15" ? "Active" : ""}
                 onClick={(event) => this.handleTipPercent(event, "value")}
-                value=".15"
+                value="0.15"
               >
                 15%
               </button>
               <button
+                className={this.state.tipPercent === "0.25" ? "Active" : ""}
                 onClick={(event) => this.handleTipPercent(event, "value")}
-                value=".25"
+                value="0.25"
               >
                 25%
               </button>
               <button
+                className={this.state.tipPercent === "0.50" ? "Active" : ""}
                 onClick={(event) => this.handleTipPercent(event, "value")}
-                value=".50"
+                value="0.50"
               >
                 50%
               </button>
@@ -91,19 +111,19 @@ class Calculator extends React.Component {
                   <br />
                   <span className="person">/ person</span>
                 </p>
-                <h3>
-                  {(this.state.amount * this.state.tipPercent) /
-                    this.state.numPeople}
-                </h3>
+                <h3>${this.calculateTipAmount()}</h3>
               </div>
               <div className="PersonAmount">
                 <p>
-                  Tip Amount
+                  Total
                   <br />
                   <span className="person">/ person</span>
                 </p>
-                <h3>$32.79</h3>
+                <h3>${this.calculateTotalAmount()}</h3>
               </div>
+              <button className="Reset" onClick={this.handleReset}>
+                RESET
+              </button>
             </div>
           </div>
         </div>
