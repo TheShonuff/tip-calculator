@@ -11,6 +11,7 @@ h5,
 p {
   font-family: "Space Mono", monospace;
 }
+
 .Controller-Container {
   display: flex;
   align-items: center;
@@ -25,16 +26,64 @@ h4 {
   margin-bottom: 1rem;
 }
 
+.BillInput img {
+  position: absolute;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.NumberOfPeopleInput img {
+  position: absolute;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
 #bill,
 #NumPeople {
   border: none;
+  font-family: "Space Mono", monospace;
   background-color: #f3f9fa;
-  width: 379px;
+  width: 362px;
   height: 48px;
   font-size: 24px;
   font-weight: bold;
   color: #00474b;
   text-align: right;
+  padding-right: 1.2rem;
+}
+
+#bill:focus {
+  outline-color: #26c2ae;
+}
+
+#CustomTip:focus {
+  outline-color: #26c2ae;
+}
+#CustomTip:hover {
+  cursor: pointer;
+}
+
+#NumPeople:focus {
+  outline-color: #26c2ae;
+}
+
+.NumPeople {
+  border: none;
+  font-family: "Space Mono", monospace;
+  background-color: #f3f9fa;
+  width: 362px;
+  height: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00474b;
+  text-align: right;
+  padding-right: 1.2rem;
+}
+.NumPeople {
+  outline-color: #26c2ae;
+}
+.error {
+  outline-color: red;
 }
 
 .Tip-Selector {
@@ -54,6 +103,23 @@ button {
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
+#CustomTip {
+  font-family: "Space Mono", monospace;
+  width: 107px;
+  height: 48px;
+  background-color: #f3f9fa;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  color: #00474b;
+  text-align: right;
+  padding-right: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
 
 .Active {
   background-color: #26c2ae;
@@ -71,6 +137,7 @@ button:hover {
   background-color: #00474b;
   border-radius: 15px;
   margin-left: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 .TipAmount {
@@ -84,12 +151,14 @@ button:hover {
 .TipAmount p {
   font-size: 16px;
   font-weight: bold;
+
   color: #fff;
 }
 
 .TipAmount h3 {
   font-size: 48px;
   font-weight: bold;
+  font-family: "Space Mono", monospace;
   color: #26c2ae;
 }
 
@@ -108,6 +177,7 @@ button:hover {
 .PersonAmount h3 {
   font-size: 48px;
   font-weight: bold;
+  font-family: "Space Mono", monospace;
   color: #26c2ae;
 }
 
@@ -128,4 +198,8 @@ button:hover {
   height: 48px;
   background-color: #26c2ae;
   color: #00474b;
+}
+
+.Reset:hover {
+  background-color: #9fe8df;
 }
