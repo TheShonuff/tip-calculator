@@ -8,7 +8,7 @@ class Calculator extends React.Component {
     super(props);
     this.state = {
       amount: "",
-      numPeople: 1,
+      numPeople: "",
       tipPercent: 0,
       customTipAmount: "",
       customTip: false,
@@ -24,7 +24,7 @@ class Calculator extends React.Component {
     this.setState({
       amount: "",
       tipPercent: 0,
-      numPeople: 1,
+      numPeople: "",
       buttonDisable: true,
     });
   }
@@ -167,44 +167,40 @@ class Calculator extends React.Component {
               ></input>
             </div>
           </div>
-          <div className="Results">
-            <div className="result">
-              <div className="TipAmount">
-                <p>
-                  Tip Amount
-                  <br />
-                  <span className="person">/ person</span>
-                </p>
-                <h3>
-                  $
-                  {this.state.amount !== "" && this.state.numPeople !== 0
-                    ? this.calculateTipAmount()
-                    : "0.00"}
-                </h3>
-              </div>
-              <div className="PersonAmount">
-                <p>
-                  Total
-                  <br />
-                  <span className="person">/ person</span>
-                </p>
-                <h3>
-                  $
-                  {this.state.amount !== "" && this.state.numPeople !== 0
-                    ? this.calculateTotalAmount()
-                    : "0.00"}
-                </h3>
-              </div>
-              <button
-                className={
-                  this.state.buttonDisable ? "Disabled Reset" : "Reset"
-                }
-                onClick={this.handleReset}
-                disabled={this.state.buttonDisable}
-              >
-                RESET
-              </button>
+          <div className="result">
+            <div className="TipAmount">
+              <p>
+                Tip Amount
+                <br />
+                <span className="person">/ person</span>
+              </p>
+              <h3>
+                $
+                {this.state.amount !== "" && this.state.numPeople !== ""
+                  ? this.calculateTipAmount()
+                  : "0.00"}
+              </h3>
             </div>
+            <div className="PersonAmount">
+              <p>
+                Total
+                <br />
+                <span className="person">/ person</span>
+              </p>
+              <h3>
+                $
+                {this.state.amount !== "" && this.state.numPeople !== ""
+                  ? this.calculateTotalAmount()
+                  : "0.00"}
+              </h3>
+            </div>
+            <button
+              className={this.state.buttonDisable ? "Disabled Reset" : "Reset"}
+              onClick={this.handleReset}
+              disabled={this.state.buttonDisable}
+            >
+              RESET
+            </button>
           </div>
         </div>
       </div>

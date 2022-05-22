@@ -211,11 +211,11 @@ button:hover {
 
 @media screen and (max-width: 500px) {
   .Calculator {
-    width: 375px;
+    width: 90%;
     height: 789px;
   }
   #bill {
-    width: 311px;
+    width: 70%;
     height: 48px;
   }
 
@@ -238,7 +238,7 @@ button:hover {
   }
 
   .NumPeople {
-    width: 311px;
+    width: 70%;
     height: 48px;
   }
   .result {
