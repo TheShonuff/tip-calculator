@@ -200,6 +200,68 @@ button:hover {
   color: #00474b;
 }
 
+.Disabled {
+  background-color: #0d686d;
+  color: #00474b;
+}
+
 .Reset:hover {
   background-color: #9fe8df;
+}
+
+@media screen and (max-width: 500px) {
+  .Calculator {
+    width: 375px;
+    height: 789px;
+  }
+  #bill {
+    width: 311px;
+    height: 48px;
+  }
+
+  .BillInput img {
+    height: 20px;
+  }
+
+  button {
+    width: 146px;
+    height: 48px;
+  }
+
+  #CustomTip {
+    width: 136px;
+    height: 48px;
+  }
+
+  .NumberOfPeopleInput {
+    padding-top: 1.5rem;
+  }
+
+  .NumPeople {
+    width: 311px;
+    height: 48px;
+  }
+  .result {
+    width: 327px;
+    height: 257px;
+    margin-left: 0;
+  }
+
+  .TipAmount h3 {
+    font-size: 32px;
+  }
+
+  .PersonAmount h3 {
+    font-size: 32px;
+  }
+
+  .Reset {
+    width: 281px;
+    height: 48px;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  .Controller-Container {
+    flex-wrap: wrap;
+  }
 }

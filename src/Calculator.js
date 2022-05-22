@@ -152,8 +152,9 @@ class Calculator extends React.Component {
                 onChange={this.handleCustomTip}
               ></input>
             </div>
-            <h5>Number of People</h5>
+
             <div className="NumberOfPeopleInput">
+              <h5>Number of People</h5>
               <img src={IconPeron} alt="Person icon"></img>
               <input
                 type="text"
@@ -195,7 +196,9 @@ class Calculator extends React.Component {
                 </h3>
               </div>
               <button
-                className="Reset"
+                className={
+                  this.state.buttonDisable ? "Disabled Reset" : "Reset"
+                }
                 onClick={this.handleReset}
                 disabled={this.state.buttonDisable}
               >
