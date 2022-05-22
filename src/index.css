@@ -16,7 +16,12 @@ code {
 }
 
 @media screen and (max-width: 500px) {
-  .App {
-    align-items: flex-start;
+  html,
+  #root,
+  #root > div {
+    /* background-color: #f6f8ff; */
+    margin: 0;
+    height: 0%;
+    background-color: #c5e4e7;
   }
 }
